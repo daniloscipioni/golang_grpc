@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "github.com/daniloscipioni/grpc/calculator/proto";
+
+message CalculatorRequest {
+    int32 value1 = 1;
+    int32 value2 = 2;
+}
+
+message CalculatorResponse {
+    int32 result = 1;
+}
+
+message CalculatorPrimeRequest {
+    int32 value = 1;
+}
+
+service CalculatorService {
+    rpc Calculator (CalculatorRequest) returns (CalculatorResponse);
+    rpc CalculatorPrimes (CalculatorPrimeRequest) returns (stream CalculatorResponse);
+}
