@@ -23,5 +23,6 @@ func main() {
 
 	//doCalculator(c)
 	//doCalculatorPrimes(c)
-	doAvg(c)
+	//doAvg(c)
+	doMax(c)
 }
